@@ -1,3 +1,4 @@
 #!/bin/bash
 
-date
+date   # we can print different date formats.
+date +%f
