@@ -33,12 +33,12 @@ VALIDATE(){
 }
 
 USAGE(){
-    echo -e "$R USAGE :: $N sudo sh 18-redirectors.sh package1 package2"
+    echo -e "$R USAGE :: $N sudo sh 18-redirectors.sh package1 package2" &>> $LOG_FILE
     exit 1
 
 }
 
-echo "Script executing started at : $(date)"
+echo "Script executing started at : $(date)" &>> $LOG_FILE
 
 CHECK_ROOT
 
