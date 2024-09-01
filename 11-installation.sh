@@ -13,3 +13,11 @@ USER=$(id -u)  #you need to run script with sudo
 
 echo "user id is:$USER"
 
+if [ $USER -ne 0]
+then
+    echo "Please run the script with root previliges"
+fi
+
+dnf install git -y
+
+
