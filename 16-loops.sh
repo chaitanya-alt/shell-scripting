@@ -17,7 +17,7 @@
 #     echo $i
 # done
 
-for i in {0..1000}
+for i in {0..1000}  
 do
     echo $i
 done
