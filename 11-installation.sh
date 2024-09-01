@@ -19,7 +19,7 @@ then
     exit 1
 fi
 
-dnf list install git
+dnf list install gittt
 
 if [ $? -ne 0 ]
 then
