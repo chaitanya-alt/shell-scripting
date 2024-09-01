@@ -32,7 +32,7 @@ do
     dnf list install $package
     if [ $? -ne 0 ]
     then 
-        echo "echo "$package is not install, we are going to instal it"
+        echo "echo $package is not install, we are going to instal it"
         dnf install $package -y
         VALIDATE $? "Installing $package"
     else 
