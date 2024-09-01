@@ -16,7 +16,7 @@
 #sudo is root user
 
 USERID=$(id -u)  #you need to run script with sudo
-R="\e[31m"
+R="\e[31m"       #we are decaring colors in function.
 G="\e[32m"
 N="\e[0m"
 
