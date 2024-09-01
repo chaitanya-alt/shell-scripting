@@ -24,7 +24,7 @@ dnf list install gittt
 if [ $? -ne 0 ]
 then
     echo "git is not install, we are going to instal it"
-    dnf install git -y
+    dnf install gittt -y
     if [ $? -ne 0 ]
     then 
         echo "git installation is failed, please check it"
