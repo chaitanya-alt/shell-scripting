@@ -15,6 +15,7 @@ VALIDATE(){
     if [ $? -ne 0 ]
     then
         echo "$2 is not successfull.."
+        exit 1
 
     else
         echo "$2 is successful.."
