@@ -11,6 +11,7 @@ USERID=$(id -u)  #you need to run script with sudo
 R="\e[31m"       #we are decaring colors in function.
 G="\e[32m"
 N="\e[0m"
+Y="\e[33m"
 
 CHECK_ROOT(){
     if [ $USERID -ne 0 ]
@@ -31,4 +32,29 @@ VALIDATE(){
     fi
 }
 
+USAGE(){
+    echo -e "$R USAGE $N :: sudo sh 18-redirectors.sh package1 package2 package2"&>> $LOGS_FILE
+    exit 1
+
+}
+
 CHECK_ROOT
+
+if [ $# -ne 0]
+then
+    USAGE
+fi
+
+for package in $@ 
+do 
+    dnf list installed $package &>> $LOGS_FILE
+    if [ $? -ne 0 ]
+    then 
+        echo "echo $package is not install, we are going to instal it" &>> $LOGS_FILE
+        dnf install $package -y &>> $LOGS_FILE
+        VALIDATE $? "Installing $package"
+    else 
+        echo -e "$package is already $Y installed, nothing to do..$N" &>> $LOGS_FILE
+    fi
+
+done
