@@ -28,6 +28,7 @@ then
     if [ $? -ne 0 ]
     then 
         echo "git installation is failed, please check it"
+        exit 1
     else
         echo "git installation is succefull"
     fi
