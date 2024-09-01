@@ -6,7 +6,7 @@ NUMBER=$1
 
 echo "please enter the number :$1"
 
-if[ $NUMBER -gt 20]
+if [ $NUMBER -gt 20]
 then
     echo "entered values $NUMBER is greated than 20"
 else 
