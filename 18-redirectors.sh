@@ -38,7 +38,7 @@ USAGE(){
 
 }
 
-echo "Script executed starting :: $TIMESTAMP"
+echo "Script executing started :: $TIMESTAMP"
 
 CHECK_ROOT
 
