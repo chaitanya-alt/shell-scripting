@@ -16,7 +16,7 @@ Y="\e[33m"
 CHECK_ROOT(){
     if [ $USERID -ne 0 ]
     then
-    echo -e "$R Please run the script with root previliges$N"  &>> $LOGS_FILE
+    echo -e "$R Please run the script with root previliges$N"  &>> $LOG_FILE
     exit 1
     fi
 }
@@ -24,11 +24,11 @@ CHECK_ROOT(){
 VALIDATE(){
     if [ $? -ne 0 ]
     then
-        echo -e "$2 is $R FAILED..$N" &>> $LOGS_FILE
+        echo -e "$2 is $R FAILED..$N" &>> $LOG_FILE
         exit 1
 
     else
-        echo -e "$2 is $G SUCCESS..$N" &>> $LOGS_FILE
+        echo -e "$2 is $G SUCCESS..$N" &>> $LOG_FILE
     fi
 }
 
@@ -47,14 +47,14 @@ fi
 
 for package in $@ # $@ refers to all arguments passed to it
 do 
-    dnf list installed $package &>> $LOGS_FILE
+    dnf list installed $package &>> $LOG_FILE
     if [ $? -ne 0 ]
     then 
-        echo "echo $package is not install, we are going to instal it" &>> $LOGS_FILE
-        dnf install $package -y &>> $LOGS_FILE
+        echo "echo $package is not install, we are going to instal it" &>> $LOG_FILE
+        dnf install $package -y &>> $LOG_FILE
         VALIDATE $? "Installing $package"
     else 
-        echo -e "$package is already $Y installed, nothing to do..$N" &>> $LOGS_FILE
+        echo -e "$package is already $Y installed, nothing to do..$N" &>> $LOG_FILE
     fi
 
 done
