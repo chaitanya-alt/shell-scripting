@@ -1,9 +1,9 @@
 #!/bin/bash
 
-LOGS_FOLDER=$(/var/logs/shell-scripts)
+LOGS_FOLDER="/var/log/shell-script" # /var/log is the default log folder in linux
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)  # this is used to the script name actual script name is 8-redirectors.sh
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
-LOGS_FILE="$LOGS_FOLDER/$SCRIPT_NAME-$TIMESTAMP.log"
+LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME-$TIMESTAMP.log"
 mkdir -p $LOGS_FOLDER
 
 
@@ -16,7 +16,7 @@ Y="\e[33m"
 CHECK_ROOT(){
     if [ $USERID -ne 0 ]
     then
-    echo "$R Please run the script with root previliges$N"  &>> $LOGS_FILE
+    echo -e "$R Please run the script with root previliges$N"  &>> $LOGS_FILE
     exit 1
     fi
 }
