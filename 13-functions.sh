@@ -14,10 +14,10 @@ USER=$(id -u)  #you need to run script with sudo
 VALIDATE(){
     if [ $? -ne 0 ]
     then
-        echo "command is not successfull.."
+        echo "$2 is not successfull.."
 
     else
-        echo "command is successful.."
+        echo "$2 is successful.."
     fi
 }
 
