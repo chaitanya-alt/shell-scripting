@@ -37,9 +37,8 @@ USAGE(){
     exit 1
 
 }
-DATE=$(date)
 
-echo "Script executing started at : $DATE" &>> $LOG_FILE
+echo "Script executing started at : $(date)"
 
 CHECK_ROOT
 
