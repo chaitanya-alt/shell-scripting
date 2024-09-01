@@ -11,3 +11,5 @@
 
 USER=$(id -u)  #you need to run script with sudo
 
+echo "user id is:$USER"
+
