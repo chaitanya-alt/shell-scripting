@@ -38,11 +38,11 @@ fi
 
 ##mysql
 
-dnf list install mysql
+dnf list installed mysql
 if [ $? -ne 0 ]
 then 
     echo "mysql is not installed, we are goint to install it..."
-    sudo dnf install mysql -y
+    dnf install mysql -y
     if [ $? -ne 0 ]
     then 
         echo "the mysql installation is failed, please check it."
