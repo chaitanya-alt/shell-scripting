@@ -38,6 +38,8 @@ USAGE(){
 
 }
 
+echo "Script executed starting :: $TIMESTAMP"
+
 CHECK_ROOT
 
 if [ $# -eq 0 ]
